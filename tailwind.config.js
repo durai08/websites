@@ -46,11 +46,39 @@ export default {
           blue: '#1E3A8A',
           dark: '#0A0A0B',
         },
+        // Ice Cream Shop
+        ice: {
+          blue: '#0EA5E9',
+          cyan: '#E0F2FE',
+          orange: '#F97316',
+          yellow: '#FDE047',
+        },
         // Medical Clinic
-        medical: {
+        clinic: {
           blue: '#2563EB',
-          teal: '#14B8A6',
-          slate: '#475569',
+          teal: '#0D9488',
+          light: '#F8FAFC',
+          dark: '#1E293B',
+        },
+        // Pro Ecommerce
+        shop: {
+          purple: '#7C3AED',
+          slate: '#0F172A',
+          gray: '#F1F5F9',
+        },
+        // Smart Tools
+        tools: {
+          cyan: '#06B6D4',
+          dark: '#020617',
+          surface: '#0F172A',
+        },
+        // Sweet Shop
+        sweet: {
+          mint: '#D1FAE5',
+          pink: '#FCE7F3',
+          gold: '#FDE68A',
+          purple: '#EDE9FE',
+          brand: '#EC4899',
         },
         // General UI Colors often used in the sub-projects
         secondary: '#64748b',
