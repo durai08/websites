@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
 
 @layer base {
   body {
@@ -21,3 +21,4 @@
 .btn-primary {
   @apply px-8 py-3 bg-shop-slate text-white font-bold rounded-lg hover:bg-shop-purple transition-all;
 }
+
