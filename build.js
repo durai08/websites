@@ -14,42 +14,59 @@ const projects = [
 ];
 
 async function build() {
-  console.log('🚀 Starting multi-project build...');
+  console.log('🚀 Starting Master Build Process...');
+  const rootDir = process.cwd();
+  const distDir = path.join(rootDir, 'dist');
 
-  // Ensure root dist is clean
-  const rootDist = path.join(process.cwd(), 'dist');
-  if (fs.existsSync(rootDist)) {
-    fs.removeSync(rootDist);
+  // 1. Clean and Prepare Root Dist
+  console.log('🧹 Cleaning dist directory...');
+  if (fs.existsSync(distDir)) {
+    fs.removeSync(distDir);
   }
+  fs.ensureDirSync(distDir);
 
-  // 1. Build the root dashboard
-  console.log('📦 Building dashboard...');
-  execSync('npx vite build', { stdio: 'inherit' });
+  // 2. Build Dashboard (Root)
+  console.log('📦 Building Portfolio Dashboard...');
+  execSync('npm run build-only', { stdio: 'inherit' });
+  console.log('✅ Dashboard built.');
 
-  // 2. Build each sub-project
+  // 3. Build Sub-projects
   for (const project of projects) {
-    console.log(`📦 Building ${project}...`);
-    const projectDir = path.resolve(process.cwd(), project);
+    console.log(`\n-----------------------------------------`);
+    console.log(`📦 Building Sub-project: ${project}...`);
+    const projectDir = path.join(rootDir, project);
     
-    // We assume dependencies are already installed in the root workspace
-    execSync('npx vite build', { cwd: projectDir, stdio: 'inherit' });
-
-    // 3. Move the built files to the root dist folder
-    const srcDist = path.join(projectDir, 'dist');
-    const destDist = path.join(process.cwd(), 'dist', project);
-    
-    if (fs.existsSync(destDist)) {
-      fs.removeSync(destDist);
+    if (!fs.existsSync(projectDir)) {
+      console.warn(`⚠️ Warning: Directory ${project} not found. Skipping.`);
+      continue;
     }
-    
-    fs.moveSync(srcDist, destDist);
-    console.log(`✅ ${project} built and moved to dist/${project}`);
+
+    // Build project
+    try {
+      execSync('npx vite build --emptyOutDir', { cwd: projectDir, stdio: 'inherit' });
+      
+      const projectDist = path.join(projectDir, 'dist');
+      const targetDist = path.join(distDir, project);
+      
+      if (fs.existsSync(projectDist)) {
+        fs.moveSync(projectDist, targetDist, { overwrite: true });
+        console.log(`✅ ${project} built and deployed to /${project}`);
+      } else {
+        console.error(`❌ Error: ${project} build did not produce a dist folder.`);
+      }
+    } catch (error) {
+      console.error(`❌ Failed to build ${project}:`, error.message);
+    }
   }
 
-  console.log('✨ All projects built successfully!');
+  console.log('\n-----------------------------------------');
+  console.log('✨ Build process complete!');
+  console.log('📂 Final dist structure:');
+  const files = fs.readdirSync(distDir);
+  console.log(files.join(', '));
 }
 
 build().catch(err => {
-  console.error('❌ Build failed:', err);
+  console.error('💥 Critical Build Failure:', err);
   process.exit(1);
 });
