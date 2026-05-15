@@ -16,6 +16,12 @@ const projects = [
 async function build() {
   console.log('🚀 Starting multi-project build...');
 
+  // Ensure root dist is clean
+  const rootDist = path.join(process.cwd(), 'dist');
+  if (fs.existsSync(rootDist)) {
+    fs.removeSync(rootDist);
+  }
+
   // 1. Build the root dashboard
   console.log('📦 Building dashboard...');
   execSync('npx vite build', { stdio: 'inherit' });
@@ -25,12 +31,7 @@ async function build() {
     console.log(`📦 Building ${project}...`);
     const projectDir = path.resolve(process.cwd(), project);
     
-    // Check if node_modules exists, if not install
-    if (!fs.existsSync(path.join(projectDir, 'node_modules'))) {
-      console.log(`Installing dependencies for ${project}...`);
-      execSync('npm install --legacy-peer-deps', { cwd: projectDir, stdio: 'inherit' });
-    }
-
+    // We assume dependencies are already installed in the root workspace
     execSync('npx vite build', { cwd: projectDir, stdio: 'inherit' });
 
     // 3. Move the built files to the root dist folder
