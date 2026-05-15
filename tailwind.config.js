@@ -87,6 +87,10 @@ export default {
         serif: ['Playfair Display', 'serif'],
         sans: ['Inter', 'sans-serif'],
         display: ['Outfit', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        header: ['Outfit', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
+        kids: ['Bubblegum Sans', 'cursive'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',

@@ -49,7 +49,8 @@ async function build() {
       const targetDist = path.join(distDir, project);
       
       if (fs.existsSync(projectDist)) {
-        fs.moveSync(projectDist, targetDist, { overwrite: true });
+        fs.copySync(projectDist, targetDist, { overwrite: true });
+        fs.removeSync(projectDist);
         console.log(`✅ ${project} built and deployed to /${project}`);
       } else {
         console.error(`❌ Error: ${project} build did not produce a dist folder.`);
