@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ice-cyan text-slate-800 font-sans;
+  }
+}
+
+.ice-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-ice-blue to-ice-orange;
+}
+
+.glass-ice {
+  @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-xl;
+}

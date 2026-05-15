@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-clinic-light text-clinic-dark font-body;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-header;
+  }
+}
+
+.clinic-glass {
+  @apply bg-white/80 backdrop-blur-lg border border-white/40;
+}
+
+.shadow-premium {
+  box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.1);
+}

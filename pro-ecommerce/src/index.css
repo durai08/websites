@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-shop-slate font-sans;
+  }
+}
+
+.ecom-nav {
+  @apply sticky top-0 bg-white/80 backdrop-blur-xl z-50 border-b border-gray-100;
+}
+
+.product-card {
+  @apply cursor-pointer relative;
+}
+
+.btn-primary {
+  @apply px-8 py-3 bg-shop-slate text-white font-bold rounded-lg hover:bg-shop-purple transition-all;
+}

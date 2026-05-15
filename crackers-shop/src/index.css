@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-festive-dark text-white font-body;
+  }
+}
+
+.fire-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-festive-red via-orange-500 to-festive-gold animate-pulse;
+}
+
+.card-gradient {
+  @apply bg-gradient-to-br from-[#121214] to-festive-dark border border-white/5;
+}

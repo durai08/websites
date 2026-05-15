@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-flower-cream text-gray-900 font-sans;
+  }
+}
+
+.floral-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-flower-rose to-flower-pink;
+}
+
+.glass-floral {
+  @apply bg-white/40 backdrop-blur-xl border border-white/60;
+}
