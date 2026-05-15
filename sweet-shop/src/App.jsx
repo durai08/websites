@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Sparkles, ShoppingCart, Heart, Cake, Star, Gift, Utensils, Zap, Menu, X } from 'lucide-react';
@@ -468,3 +469,4 @@ const Contact = () => (
 );
 
 export default App;
+

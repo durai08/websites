@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion'
 import { Cpu, Globe, Lock, Code, Terminal, Zap, Shield, Box, Menu, X, ChevronRight } from 'lucide-react'
@@ -320,3 +321,4 @@ function App() {
 }
 
 export default App
+
