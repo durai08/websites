@@ -4,56 +4,56 @@ const projects = [
   {
     name: 'Cafe & Restaurant',
     path: '/cafe-restaurant/index.html',
-    image: '/shared-images/cafe-hero.jpg',
+    image: '/images/cafe-hero.jpg',
     tag: 'Hospitality',
     description: 'A premium dining experience with elegant design and seamless reservation features.'
   },
   {
     name: 'Crackers Shop',
     path: '/crackers-shop/index.html',
-    image: '/shared-images/crackers-hero.jpg',
+    image: '/images/crackers-hero.jpg',
     tag: 'E-commerce',
     description: 'Festive firecrackers shop with vibrant animations and dynamic product showcases.'
   },
   {
     name: 'Flower Shop',
     path: '/flower-shop/index.html',
-    image: '/shared-images/flower-hero.jpg',
+    image: '/images/flower-hero.jpg',
     tag: 'Boutique',
     description: 'Elegant floral arrangements presented with high-end aesthetic and smooth transitions.'
   },
   {
     name: 'Ice Cream Shop',
     path: '/ice-cream-shop/index.html',
-    image: '/shared-images/icecream-hero.jpg',
+    image: '/images/icecream-hero.jpg',
     tag: 'Dessert',
     description: 'Cool and refreshing interface for a premium ice cream parlor with delightful visuals.'
   },
   {
     name: 'Medical Clinic',
     path: '/medical-clinic/index.html',
-    image: '/shared-images/clinic-hero.jpg',
+    image: '/images/clinic-hero.jpg',
     tag: 'Healthcare',
     description: 'Professional healthcare services portal designed for trust and accessibility.'
   },
   {
     name: 'Pro E-commerce',
     path: '/pro-ecommerce/index.html',
-    image: '/shared-images/ecom-hero.jpg',
+    image: '/images/ecom-hero.jpg',
     tag: 'Retail',
     description: 'State-of-the-art shopping platform with advanced product filtering and modern UI.'
   },
   {
     name: 'Smart Tools',
     path: '/smart-tools/index.html',
-    image: '/shared-images/tools-globe.jpg',
+    image: '/images/tools-globe.jpg',
     tag: 'Utilities',
     description: 'A suite of powerful utility tools for modern professionals and developers.'
   },
   {
     name: 'Sweet Shop',
     path: '/sweet-shop/index.html',
-    image: '/shared-images/sweet-about.jpg',
+    image: '/images/sweet-macaron.jpg',
     tag: 'Confectionery',
     description: 'Delicious sweets and treats showcased with mouth-watering photography.'
   }
